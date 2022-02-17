@@ -5,14 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="shop.css">
     
 </head>
-<body >    
+<body onload="onSiteLoad()">    
     <header id="header">
         https://www.catbreedslist.com/
     </header>
-    <div id="photo_in_list"><p>hi</p></div>
+    <div id="selection"></div>
+    <div id="content">
+        <div id="store_container">
+        </div>
+    </div> 
 
 
     <script >
@@ -28,7 +33,7 @@
                 img_5: "images_shop/british-shorthair-3-3.jpg",
                 price: 2400,
                 color: ["Grey", "Silver", "Blue", "Red", "Cream"],
-                fur:"short"
+                fur:"short",
                 info: 'The British Shorthair, also called the English Cat or simply the “Brit,” is the national cat of the British Isles. This is a compact, muscular and powerful breed that should be "cobby" or chunky in appearance. The British Shorthair has a broad chest, short strong legs and large rounded paws. Its tail is thick at the base, round at the tip and plush but not fluffy. The males are almost always larger than the females; this size difference is more easily recognized in British Shorthairs than in most other domestic breeds. Unlike females, mature males tend to develop prominent chubby cheeks, or jowls, which is another distinguishing gender-based feature. \n \nThe British Shorthair – or the “Brit,” as it is sometimes affectionately called - is an easygoing, intelligent, friendly breed. It has been described as being placid, patient and predictable. The British Shorthair’s sweet and gentle nature makes them wonderful, steadfast companions and undemanding family members. They adapt easily to apartment, farm, city or estate living. These are not noisy or pushy cats, although they greatly appreciate and accept affection when it is offered to them.'   
             },
             {
@@ -140,7 +145,7 @@
                 info: 'The Lykoi is a natural mutation from a domestic shorthair that has the appearance of a werewolf. The mutation has occurred in domestic cats over the last 20 years. DNA testing has been done by UC Davis to confirm that the cats do not carry the Sphynx/Devon Rex gene. The Lykoi breed was developed in Vonore, Tennessee and is said to resemble a werewolf. The word "lykoi" means "wolves" in Greek.\n\nThe Lykoi is a small to medium-sized cat weighing between 6-11 pounds. They have lean, athletic bodies with pointed, large ears. Their bodies are longer than their tails as well. The Lykoi is a partially hairless breed of cat with a color that is unique to them. The hair coat is a combination of amelanistic hair and solid black hair. The mix of hair can vary from being almost black to almost white.'    
             },
             {
-                id:9,
+                id:10,
                 breed: "Toyger",
                 img_s: "images_shop/toyger-1.jpg",
                 img_l: "images_shop/toyger-2.jpg",
@@ -150,7 +155,7 @@
                 fur:"short",
                 info: "The toyger is a breed of domestic cat, the result of breeding domestic shorthaired tabbies (beginning in the 1980s) to make them resemble a 'toy tiger', as its striped coat is reminiscent of the tiger's. The breed's creator, Judy Sugden, has stated that the breed was developed in order to inspire people to care about the conservation of tigers in the wild. It was recognized for 'Registration only' by The International Cat Association in the early 1990s, and advanced through all requirements to be accepted as a full Championship breed in 2007. There are about 20 breeders in the United States and another 15 or so in the rest of the world. With her beautiful bold stripes and powerful body, the Toyger looks like a jungle tiger."   
             },{
-                id:10,
+                id:11,
                 breed: "Burmese",
                 img_s: "images_shop/burmese-1.jpg",
                 img_l: "images_shop/burmese-2.jpg",
@@ -164,7 +169,7 @@
                 fur:"medium",
                 info: "The Burmese is a stocky, smooth-coated cat that descends from ancient cats of Asia. It has become quite popular because of its delightful personality, friendly conversational skills and low-maintenance coat. Burmese are small to medium-sized cats, with broad chests and strong shoulders. They typically weigh much more than one would expect, due to their heavily muscled physique. Burmese are more substantial than their Siamese cousins, although fanciers of the breed may restate this as being fluffier, rather than fatter. British Burmese cats often have longer facial features and a more lithe body structure than the North American Burmese, which have a shorter nose and amore square body shape.\n\nAs one of the most sociable and people-oriented of all domestic cat breeds, the Burmese enjoys forming very close bonds with its owners, primary caretakers and other pets in the household. These cats are known for having especially delightful personalities. They are described as being dog-like and sunny of temperament, because by nature they are friendly, kind, gentle and outgoing. Burmese also are usually quite playful, well into adulthood. Given their Siamese ancestors, Burmese can be more vocal than many other domestic feline breeds. However, they tend to be quieter-voiced than the Siamese and typically have a softer, less raucous and more pleasant-sounding meow (with no offense meant to Siamese fanciers, to whom the Siamese voice understandably sounds like the calling of angels). Burmese enjoy having conversations with their people, whether in the home or wherever else they may be. This is a highly intelligent, thoughtful breed. Burmese are known to be extremely affectionate, and they love to snuggle and cuddle with their favorite people."    
             },{
-                id:11,
+                id:12,
                 breed: "Siamese",
                 img_s: "images_shop/siamese-1.jpg",
                 img_l: "images_shop/siamese-2.jpg",
@@ -178,7 +183,7 @@
                 fur: "short",
                 info: "An ancient breed, the Siamese is considered the quintessential people cat because she loves being with her human companions. The sleek, striking Siamese has deep blue almond-shaped eyes that radiate intelligence and emotion. Affectionately known as Meezers, this breed is sociable, entertaining and playful. The Siamese is tolerant of children 6 and older and enjoys other cats but may not get along with dogs. The Siamese breed was used to create the Colorpoint Shorthair, which is identical to the Siamese except for her distinctive, unique colors. \n\nSiamese cats are known to be affectionate, friendly, loyal and bold. The Blue Point Siamese is said by some to be the gentlest and most affectionate of all the Colorpoint Shorthair varieties, although certainly many fanciers of the other Siamese color varieties might dispute that characterization. Siamese have been described as precocious, gregarious, intelligent and outgoing. They are extremely friendly with people and other pets that they know and like, and they thrive on companionship and affection. They form extremely close bonds with their primary caretaker and do not like to be left alone for long periods of time. They often do better kept in household pairs or small groups, so that they can entertain each other while their owners are away. Some Siamese can have a nervous personality and most do not like sudden changes in their living environment. Siamese can be aloof toward strangers and are often skittish around newcomers to the home."    
             },{
-                id:12,
+                id:13,
                 breed: "Persian",
                 img_s: "images_shop/persian-cat-1.jpg",
                 img_l: "images_shop/persian-cat-2.jpg",
@@ -193,12 +198,57 @@
                 info: "The Persian, also known as the Persian Longhair, is an elegant, graceful, gentle breed whose most distinguishing characteristics are its remarkable coat and its unique head. Today, the Persian is one of the most popular of all feline breeds due to its exceptional beauty, kind temperament and easy-going disposition. While their basic temperaments have changed little over time, their conformation and overall appearance have changed considerably. Modern Persians are medium to large in size and stocky, with short thick legs, massive rumps and distinctively cobby profiles. Their large, round paws are tufted with fur. The Persian’s head is broad in skull, round and unusually large for the size of its body, while its ears are especially tiny in comparison and are tufted, which is called having “ear furnishings.” The Persian’s eyes are big, round and very expressive. Whatever their color, deepness of eye color is preferred in this breed. The Persian’s open, pansy-like face is famously flat, with a perky up-turned nose and an extremely short muzzle that is barely noticeable. Its neck is short and thick, with a distinctive mane-like ruff, and its tail is short and bushy. The heads and facial features of Persians have become increasingly exaggerated over time. \n\nThe coat of the Persian has also become more exaggerated over the years. It is extraordinarily long, silky, dense, fine and profuse. Persians have an extremely thick, soft undercoat, with a longer outer layer made up of more coarse guard hairs. The Persian’s coat requires daily grooming (including brushing and combing), along with regular bathing, to prevent the development of nasty tangles and mats. This is necessary whether or not the cat is being entered in the show ring. Persians tend to shed year-round, even more so than other long-haired breeds. They should be housed exclusively indoors to protect their prized coats, as well as to protect them from parasites and other perils of outdoor living."    
             } 
         ]
+
+
+
+        /* let shoppingCart = [
+            itemsInCart = [],
+            
+        ];
+        let itemsPassingCriteria = [];
+        let numberOfItemsInCart = shoppingCart.itemsInCart.length;
+        let sum = 0;
+        for (let i = 0; i < numberOfItemsInCart; i++){
+            sum += shoppingCart[i].price;
+        }
+
+        function addToCart(cat_id){
+            
+        } */
+        
+        function onSiteLoad(){ 
+            let store_container = document.getElementById("store_container");
+
+            for (let i=0; i < cat_data.length;i++) {
+                let newListItem = document.createElement('div');
+                newListItem.innerHTML = `
+                    <div class="store_card">
+                        <img class="store_item_img" src=${cat_data[i].img_s}>
+                        <div class="store_item_name"> ${cat_data[i].breed}</div>
+                        <div class="store_item_price"> ${cat_data[i].price}</div>    
+                    </div>        
+                    `;
+                newListItem.onclick = () => individualView(cat_data[i]);
+                newListItem.onhover = () => hoverView(cat_data[i]);
+
+                store_container.appendChild(newListItem);
+            }
+        }
+
+
         
         
-            let testphoto = cat_data[0].img_s;
-            let img_place = document.getElementById('photo_in_list');
-            img_place.innerHTML = `<img src="${testphoto}">`
+        
+            
         
         </script>
 </body>
 </html>
+
+<!-- newListItem.innerHTML = `
+<div id="store_card">
+    <img class="store_item_img" src=${cat_data[i].img_s}>
+    <div class="store_item_name"> ${cat_data[i].breed}</div>
+    <div class="store_item_price"> ${cat_data[i].price}</div>    
+</div>        
+`; -->

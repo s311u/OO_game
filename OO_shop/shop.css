@@ -1,3 +1,25 @@
 body{
     background-image: "images_shop/background1.png";
+    text-align: center;
+    display: flex;
+}
+#content{
+}
+.store_item{
+}
+.store_item_name{
+
+}
+.store_card{
+    width: 100%;
+}
+#store_container{
+    text-align: center;
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+#selection{
+
 }
