@@ -1,20 +1,19 @@
 
 const prompts = require('prompts');
 
-class Car {
-  constructor(brand, model, registration) {
-      this.brand = brand;
-      this.model = model;
-      this.registration = registration;
-      this.speed = 0;
+class Room {
+  constructor(name, enemy, roomL, roomR) { 
+      this.name = name;
+      this.enemy = enemy;
+      this.roomL = roomL;
+      this.roomR = roomR;
+      this.rooms = [this.roomL, this.roomR];
   }
 
-  increaseSpeed() {
-      this.speed += 1;
-  }
+  goToRoom(room)
 
-  decreaseSpeed() {
-      this.speed -= 1;
+  lookAround(room){
+    console.log("You look around. \n" + room.info + "\n" + "There are doorways leading to: \n" + room.rooms)
   }
 
   makeNoise() {
@@ -24,6 +23,9 @@ class Car {
   displayInformation() {
       console.log('Car: ' + this.brand + ', ' + this.model + ', speed: ' + this.speed);
   }
+}
+class Enemy {
+  constructor()
 }
 
 class RaceCar extends Car {
