@@ -1,7 +1,6 @@
 body{
     background-image: "images_shop/background1.png";
     text-align: center;
-    display: flex;
 }
 #content{
 }
@@ -20,6 +19,28 @@ body{
     flex-wrap: wrap;
     gap: 2rem;
 }
-#selection{
-
+#selection{ 
+    display: flex;
+}
+#nav{
+    position: sticky;
+    text-align: right;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex; 
+    background-image: linear-gradient(to left, pink, lightpink, plum, thistle);
+}
+#cart_image{
+    height: 100px
+}
+#search{
+    padding: 8px;
+    width: 100%;
+    display: flex;
+}
+#search::placeholder{
+    color: plum;
 }

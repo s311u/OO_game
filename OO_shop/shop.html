@@ -11,8 +11,17 @@
 </head>
 <body onload="onSiteLoad()">    
     <header id="header">
-        https://www.catbreedslist.com/
+       cat info and images from https://www.catbreedslist.com/
     </header>
+
+    <nav id="nav">
+        <div class="search">
+            <input type="text" id="search" placeholder="Search">
+            <button id="search-btn" onclick="search()">search</button>
+        </div>
+        <img id="cart_img" src="images_shop/other/cart.png" onclick="cartView()">
+    </nav>
+
     <div id="selection"></div>
     <div id="content">
         <div id="store_container">
