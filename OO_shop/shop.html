@@ -16,10 +16,12 @@
 
     <nav id="nav">
         <div class="search">
-            <input type="text" id="search" placeholder="Search">
-            <button id="search-btn" onclick="search()">search</button>
+            <span id="site_name">cop-a-cat | the easiest way to buy a cat online!</span>
+            <input type="text" id="search" placeholder="Search" onchange="search()">
+            <button id="search-btn" onclick="search()">search</button><span class="gap"></span>
+            <span onclick="advancedSearch()" id="advancedSearch">Advanced search</span>
         </div>
-        <img id="cart_img" src="images_shop/other/cart.png" onclick="cartView()">
+        <span id="cart_top_bar" onload="displayCartItemNumber()"><img id="cart_img" src="images_shop/other/cart.png" onclick="cartView()"></span>
     </nav>
 
     <div id="selection"></div>
@@ -136,7 +138,7 @@
                 breed: "American Curl",
                 img_s: "images_shop/american-curl-1.jpg",
                 img_l: "images_shop/american-curl-2.jpg",
-                img_2: "images_shopamerican-curl-3.jpg",
+                img_2: "images_shop/american-curl-3.jpg",
                 price: 1900,
                 color:["Blue","Black","Red","Cream","Chocolate","Lilac"],
                 fur: "medium",
@@ -210,20 +212,21 @@
 
 
 
-        /* let shoppingCart = [
-            itemsInCart = [],
-            
-        ];
+        let shoppingCart = [];
         let itemsPassingCriteria = [];
-        let numberOfItemsInCart = shoppingCart.itemsInCart.length;
+        let numberOfItemsInCart = shoppingCart.length;
         let sum = 0;
         for (let i = 0; i < numberOfItemsInCart; i++){
             sum += shoppingCart[i].price;
         }
-
+console.log(numberOfItemsInCart);
         function addToCart(cat_id){
             
-        } */
+        }
+        function displayCartItemNumber(){
+            let span = document.getElementById("cart_top_bar");
+            span.innerHTML = numberOfItemsInCart;
+        }
         
         function onSiteLoad(){ 
             let store_container = document.getElementById("store_container");
@@ -231,20 +234,44 @@
             for (let i=0; i < cat_data.length;i++) {
                 let newListItem = document.createElement('div');
                 newListItem.innerHTML = `
+                    <a id="image">    
                     <div class="store_card">
-                        <img class="store_item_img" src=${cat_data[i].img_s}>
+                        <div class="sansCart">
+                            <img class="store_item_img" src=${cat_data[i].img_l}>
+                            <img class="store_item_hover_img" src=${cat_data[i].img_2}>
+                        
                         <div class="store_item_name"> ${cat_data[i].breed}</div>
-                        <div class="store_item_price"> ${cat_data[i].price}</div>    
-                    </div>        
+                        <div class="store_item_price"> ${cat_data[i].price} €</div></div>
+                        <span class="addCartHomeView" onclick="addToCart()" onclick="displayCartItemNumber()"><img class="cart_img_card" src="images_shop/other/cart.png">+</span>     
+                        </div>
+                    </a>        
                     `;
-                newListItem.onclick = () => individualView(cat_data[i]);
+                newListItem.children[0].children[0].children[0].onclick = () => individualView(cat_data[i]);
                 newListItem.onhover = () => hoverView(cat_data[i]);
 
                 store_container.appendChild(newListItem);
             }
         }
 
+        /* function hoverView(){
+            let card_img = document.getElementsByClassName("store_item_img")
+            card_img.innerHTML = `<img class="store_item_img" src=${cat_data.img_3}>`
+        } */
 
+        function search(){
+            let searchCards = document.querySelectorAll(".store_card")
+            let input = document.getElementById("search").value //mixed case input
+            input = input.toLowerCase(); 
+            let resultCards = document.getElementsByClassName("store_card");
+           
+            for (let i = 0; i < cat_data.length; i++){
+                if (!cat_data[i].breed.toLowerCase().includes(input) && !cat_data[i].info.toLowerCase().includes(input)){
+                    searchCards[i].style.display = "none";
+                } else {
+                    searchCards[i].style.display = "block"
+                }
+            }
+        }
         
         
         
@@ -254,10 +281,3 @@
 </body>
 </html>
 
-<!-- newListItem.innerHTML = `
-<div id="store_card">
-    <img class="store_item_img" src=${cat_data[i].img_s}>
-    <div class="store_item_name"> ${cat_data[i].breed}</div>
-    <div class="store_item_price"> ${cat_data[i].price}</div>    
-</div>        
-`; -->
