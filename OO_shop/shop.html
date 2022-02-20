@@ -8,8 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="shop.css">
     
+    
 </head>
-<body onload="onSiteLoad()">    
+<body onload="onSiteLoad()" onload="displayCartItemNumber()">    
     <header id="header">
        cat info and images from https://www.catbreedslist.com/
     </header>
@@ -21,7 +22,9 @@
             <button id="search-btn" onclick="search()">search</button><span class="gap"></span>
             <span onclick="advancedSearch()" id="advancedSearch">Advanced search</span>
         </div>
-        <span id="cart_top_bar" onload="displayCartItemNumber()"><img id="cart_img" src="images_shop/other/cart.png" onclick="cartView()"></span>
+        <div class="top_cart"><span id="cart_top_bar" onload="displayCartItemNumber()"></span>
+        <img id="cart_img" src="images_shop/other/cart.png" onclick="cartView()">
+    </div>
     </nav>
 
     <div id="selection"></div>
@@ -45,7 +48,7 @@
                 price: 2400,
                 color: ["Grey", "Silver", "Blue", "Red", "Cream"],
                 fur:"short",
-                info: 'The British Shorthair, also called the English Cat or simply the “Brit,” is the national cat of the British Isles. This is a compact, muscular and powerful breed that should be "cobby" or chunky in appearance. The British Shorthair has a broad chest, short strong legs and large rounded paws. Its tail is thick at the base, round at the tip and plush but not fluffy. The males are almost always larger than the females; this size difference is more easily recognized in British Shorthairs than in most other domestic breeds. Unlike females, mature males tend to develop prominent chubby cheeks, or jowls, which is another distinguishing gender-based feature. \n \nThe British Shorthair – or the “Brit,” as it is sometimes affectionately called - is an easygoing, intelligent, friendly breed. It has been described as being placid, patient and predictable. The British Shorthair’s sweet and gentle nature makes them wonderful, steadfast companions and undemanding family members. They adapt easily to apartment, farm, city or estate living. These are not noisy or pushy cats, although they greatly appreciate and accept affection when it is offered to them.'   
+                info: 'The British Shorthair, also called the English Cat or simply the “Brit,” is the national cat of the British Isles. This is a compact, muscular and powerful breed that should be "cobby" or chunky in appearance. The British Shorthair has a broad chest, short strong legs and large rounded paws. Its tail is thick at the base, round at the tip and plush but not fluffy. The males are almost always larger than the females; this size difference is more easily recognized in British Shorthairs than in most other domestic breeds. Unlike females, mature males tend to develop prominent chubby cheeks, or jowls, which is another distinguishing gender-based feature. <br> <br>The British Shorthair – or the “Brit,” as it is sometimes affectionately called - is an easygoing, intelligent, friendly breed. It has been described as being placid, patient and predictable. The British Shorthair’s sweet and gentle nature makes them wonderful, steadfast companions and undemanding family members. They adapt easily to apartment, farm, city or estate living. These are not noisy or pushy cats, although they greatly appreciate and accept affection when it is offered to them.'   
             },
             {
                 id:2,
@@ -60,7 +63,7 @@
                 price: 2900,
                 color: ["White", "Black", "Blue","Red", "Cream","Chocolate","Lavender"],
                 fur:"none",
-                info: "The Sphynx is one of the most unusual and rare of all domestic feline breeds. Its most distinguishing characteristic is that it appears to be entirely hairless. However, most Sphynx do have some degree of short, sparse downy fur that is most noticeable on the ears, muzzle, tail, feet and scrotum. When present, even this fur is barely perceptible to the human eye or to the human touch. The fine fur tends to be more visible on young kittens and then thins or disappears with age. The markings and coloration are highly unique to each Sphynx cat, with color depending entirely upon the pigmentation of its skin. All of the usual domestic cat colors and coat patterns can be found in the Sphynx. The texture of the cat’s skin – which has been said to resemble the fuzz of a peach - feels like soft chamois leather or suede and usually is noticeably warm to the touch. Whiskers and eyebrows may or may not be present, and when present they may be either whole or broken. Kittens are more uniformly wrinkled than are adults, but mature Sphynx should retain some wrinkling, especially around their shoulders and neck. \n\nThe hairless Sphynx is muscular with broad ears and a wide-eyed, friendly expression. This sweet-natured, lively cat is inquisitive and loves being the center of attention. A devoted, affectionate feline, the Sphynx follows her human companions everywhere, purring with delight. This breed does not do well when left alone all day. The Sphynx is a healthy, hardy cat."   
+                info: "The Sphynx is one of the most unusual and rare of all domestic feline breeds. Its most distinguishing characteristic is that it appears to be entirely hairless. However, most Sphynx do have some degree of short, sparse downy fur that is most noticeable on the ears, muzzle, tail, feet and scrotum. When present, even this fur is barely perceptible to the human eye or to the human touch. The fine fur tends to be more visible on young kittens and then thins or disappears with age. The markings and coloration are highly unique to each Sphynx cat, with color depending entirely upon the pigmentation of its skin. All of the usual domestic cat colors and coat patterns can be found in the Sphynx. The texture of the cat’s skin – which has been said to resemble the fuzz of a peach - feels like soft chamois leather or suede and usually is noticeably warm to the touch. Whiskers and eyebrows may or may not be present, and when present they may be either whole or broken. Kittens are more uniformly wrinkled than are adults, but mature Sphynx should retain some wrinkling, especially around their shoulders and neck. <br><br>The hairless Sphynx is muscular with broad ears and a wide-eyed, friendly expression. This sweet-natured, lively cat is inquisitive and loves being the center of attention. A devoted, affectionate feline, the Sphynx follows her human companions everywhere, purring with delight. This breed does not do well when left alone all day. The Sphynx is a healthy, hardy cat."   
             },
             {
                 id:3,
@@ -75,7 +78,7 @@
                 price: 900,
                 color:["Black","Blue","Brown","Silver","Tabby"],
                 fur: "short",
-                info: "The American Shorthair is known for its longevity, robust health, calm disposition, good looks, friendliness and gentleness. It is a true native American breed that comes in a variety of colors, although it does not come in a pointed pattern like that of the Siamese. The best known American Shorthairs are the dramatically marked silver tabbies, which have been popular in commercial advertisements and movies. \n\nThe American Shorthair ranges in size from medium to large. It is well-built and powerful, with a short, dense coat and large, piercing round eyes. This breed is less square in shape and larger than its counterpart, the British Shorthair. It also has a more oblong rather than a round head, larger ears and longer legs. This is a low-maintenance breed that only requires occasional brushing to keep its coat fresh and manage mild shedding."   
+                info: "The American Shorthair is known for its longevity, robust health, calm disposition, good looks, friendliness and gentleness. It is a true native American breed that comes in a variety of colors, although it does not come in a pointed pattern like that of the Siamese. The best known American Shorthairs are the dramatically marked silver tabbies, which have been popular in commercial advertisements and movies. <br><br>The American Shorthair ranges in size from medium to large. It is well-built and powerful, with a short, dense coat and large, piercing round eyes. This breed is less square in shape and larger than its counterpart, the British Shorthair. It also has a more oblong rather than a round head, larger ears and longer legs. This is a low-maintenance breed that only requires occasional brushing to keep its coat fresh and manage mild shedding."   
             },
             {
                 id:4,
@@ -90,7 +93,7 @@
                 price: 1200,
                 color:["White","Black","Blue","Red","Cream","Silver"],
                 fur: "short",
-                info: "With her uniquely folded ears, round face and wide eyes, the Scottish Fold is described as looking like a pixie, an owl or a teddy bear. A mellow, loving breed, this cat adapts easily to new environments and enjoys adults, children and other pets. The Scottish Fold usually bonds to one person, following you from room to room like a loyal puppy. This playful, intelligent breed has two coat varieties, longhair and shorthair. \n\n Scottish Folds are normally affectionate, calm and well-behaved. They are highly personable and tend to bond well with their entire human and companion pet family. They are hardy animals, owing this in part to their barn cat ancestors. Scottish Folds typically are content in almost any type of household – rural or urban, busy or quiet. They do well in noisy homes with children and/or other cats and dogs, although they also seem to be just as pleased to be an only pet in a one-person household. While Scottish Folds appreciate attention, affection and play time, they can be quite content to spend their days alone at home napping, while their owners are at work. The Scottish Fold has a very slight, soft meow and is not a particularly vocal breed."    
+                info: "With her uniquely folded ears, round face and wide eyes, the Scottish Fold is described as looking like a pixie, an owl or a teddy bear. A mellow, loving breed, this cat adapts easily to new environments and enjoys adults, children and other pets. The Scottish Fold usually bonds to one person, following you from room to room like a loyal puppy. This playful, intelligent breed has two coat varieties, longhair and shorthair. <br><br> Scottish Folds are normally affectionate, calm and well-behaved. They are highly personable and tend to bond well with their entire human and companion pet family. They are hardy animals, owing this in part to their barn cat ancestors. Scottish Folds typically are content in almost any type of household – rural or urban, busy or quiet. They do well in noisy homes with children and/or other cats and dogs, although they also seem to be just as pleased to be an only pet in a one-person household. While Scottish Folds appreciate attention, affection and play time, they can be quite content to spend their days alone at home napping, while their owners are at work. The Scottish Fold has a very slight, soft meow and is not a particularly vocal breed."    
             },
             {
                 id: 5,
@@ -105,7 +108,7 @@
                 price: 1100,
                 color:["White","Black","Blue","Red","Cream","Silver","Tabby","Cinnamon"],
                 fur:"long",
-                info: "The Norwegian Forest Cat is a strong, solid, muscular cat that is somewhat similar in type to the Maine Coon. It has been suggested that the Norwegian is an early ancestor of the Maine Coon and perhaps of the long-haired Manx variety, as well. Called the “Norsk Skaukatt” in its homeland, this cat has a long, dense double coat, with a coarse outer layer covering a thick, wooly undercoat that makes it virtually water-proof even in the heaviest of rainstorms. Its tufted, lynx-like ears, ruffed neck and long bushy tail provide additional protection against bitter weather. These are big cats. Adult males typically weigh between 10 and 16 pounds; females weigh substantially less. Their hind legs are longer than their front legs, which is one characteristic that distinguishes them from the Maine Coon. Despite its size, the Norwegian Forest Cat has a certain elegance about it. It has a refined, triangular-shaped head with a long, straight face in profile. Its eyes are large, almond-shaped and slanted slightly upward at the outer corners. This breed comes in a wide range of beautiful colors. However, color and pattern are considered secondary to a correct coat and body type. Norwegian Forest Cats do tend to shed, especially during the summer months, although their coat requires only occasional brushing and combing to keep them tidy. \n\nNorwegian Forest Cats are smart, friendly and playful, much like their probable distant cousins, the Maine Coons. They are inquisitive and have great affection for the outdoors. However, they also greatly enjoy the company of people and other pets. In fact, Norwegian Forest Cats are known to go looking for companionship, if they have been left alone or unattended to by their owners for prolonged periods of time. Norwegians are affectionate but not overly pushy or pestering. They certainly like to cuddle with and be close to their owners, but they are not as clingy or demanding as some other breeds. They also are not an especially loud or vocal breed. Norwegian Forest Cats are patient, stable and even-tempered. They are not easily-stressed, which makes them terrific companions for families with young children."    
+                info: "The Norwegian Forest Cat is a strong, solid, muscular cat that is somewhat similar in type to the Maine Coon. It has been suggested that the Norwegian is an early ancestor of the Maine Coon and perhaps of the long-haired Manx variety, as well. Called the “Norsk Skaukatt” in its homeland, this cat has a long, dense double coat, with a coarse outer layer covering a thick, wooly undercoat that makes it virtually water-proof even in the heaviest of rainstorms. Its tufted, lynx-like ears, ruffed neck and long bushy tail provide additional protection against bitter weather. These are big cats. Adult males typically weigh between 10 and 16 pounds; females weigh substantially less. Their hind legs are longer than their front legs, which is one characteristic that distinguishes them from the Maine Coon. Despite its size, the Norwegian Forest Cat has a certain elegance about it. It has a refined, triangular-shaped head with a long, straight face in profile. Its eyes are large, almond-shaped and slanted slightly upward at the outer corners. This breed comes in a wide range of beautiful colors. However, color and pattern are considered secondary to a correct coat and body type. Norwegian Forest Cats do tend to shed, especially during the summer months, although their coat requires only occasional brushing and combing to keep them tidy. <br><br>Norwegian Forest Cats are smart, friendly and playful, much like their probable distant cousins, the Maine Coons. They are inquisitive and have great affection for the outdoors. However, they also greatly enjoy the company of people and other pets. In fact, Norwegian Forest Cats are known to go looking for companionship, if they have been left alone or unattended to by their owners for prolonged periods of time. Norwegians are affectionate but not overly pushy or pestering. They certainly like to cuddle with and be close to their owners, but they are not as clingy or demanding as some other breeds. They also are not an especially loud or vocal breed. Norwegian Forest Cats are patient, stable and even-tempered. They are not easily-stressed, which makes them terrific companions for families with young children."    
             },
             {
                 id: 6,
@@ -120,7 +123,7 @@
                 price: 1600,
                 color:["Blue", "Silver"],
                 fur: "short",
-                info: "The Russian Blue is quite an old feline breed that descends from cats native to the current, and former, country of Russia. This is a lean, medium-sized cat with a short, dense, plush double-coat that is described as being seal-like in texture. The color should be a solid bluish-gray, with a distinctly silvery sheen that comes from the dilute expression of the black gene. The silver-to-transparent hair tips on darker slate-blue hairs are what give the coat of the Russian Blue such a shimmering appearance, which is especially apparent when observed in natural light. There should be no trace of white or tabby markings on the ideal Russian Blue. Top-quality coat color and texture are the single most important characteristics of the Russian Blue in show competition. \n\nRussian Blues normally make quiet, gentle and affectionate companions. They are strikingly handsome and unique among domestic cats in their combination of color, coat and conformation. These are docile, sensitive, kind animals that are particularly in-tune with their owners’ emotions. They develop strong bonds with their loved ones and are extremely affectionate and loyal. The Russian Blue is also known for getting along quite well with other pets and with children that live in their immediate household. They are typically tidy and clean. Russian Blues can be shy around strangers, unless they are brought up in a very well-socialized living environment. They are not known to be aggressive or especially reclusive. They do not like to be left alone for prolonged periods of time and prefer the company of either a person or another companion pet at all times. The Russian Blue makes an exceptionally devoted companion."    
+                info: "The Russian Blue is quite an old feline breed that descends from cats native to the current, and former, country of Russia. This is a lean, medium-sized cat with a short, dense, plush double-coat that is described as being seal-like in texture. The color should be a solid bluish-gray, with a distinctly silvery sheen that comes from the dilute expression of the black gene. The silver-to-transparent hair tips on darker slate-blue hairs are what give the coat of the Russian Blue such a shimmering appearance, which is especially apparent when observed in natural light. There should be no trace of white or tabby markings on the ideal Russian Blue. Top-quality coat color and texture are the single most important characteristics of the Russian Blue in show competition. <br><br>Russian Blues normally make quiet, gentle and affectionate companions. They are strikingly handsome and unique among domestic cats in their combination of color, coat and conformation. These are docile, sensitive, kind animals that are particularly in-tune with their owners’ emotions. They develop strong bonds with their loved ones and are extremely affectionate and loyal. The Russian Blue is also known for getting along quite well with other pets and with children that live in their immediate household. They are typically tidy and clean. Russian Blues can be shy around strangers, unless they are brought up in a very well-socialized living environment. They are not known to be aggressive or especially reclusive. They do not like to be left alone for prolonged periods of time and prefer the company of either a person or another companion pet at all times. The Russian Blue makes an exceptionally devoted companion."    
             },
             {
                 id: 7,
@@ -131,7 +134,7 @@
                 price: 1200,
                 color:["White", "Black","Red", "Cream","Chocolate","Lilac"],
                 fur: "curly",
-                info: "The Selkirk Rex is a one of the most recent natural additions to the purebred cat fancy. This breed is known for its extremely soft curly hair and its curly whiskers, yet it is distinct from all other curly-coated breeds. Unlike the Devon Rex and Cornish Rex, the coat of the Selkirk Rex is thick and dense, and there are longhaired and shorthaired varieties. This breed comes in a rainbow of colors, with the quality of its coat being of the utmost importance in the show ring. The curly coat of the Selkirk Rex must be plush, with a woolly feel and look, sometimes referred to as being in tousled disarray or resembling a “bad hair day.” The loose, unstructured curls are most prominent on the cat’s flanks, belly and around the neck. They are least prominent on top of the back. The dramatic curled locks on longhaired Selkirks are more noticeable than those on the shorthaired variety. Straight-haired Selkirks can be born in the same purebred litter as curly-haired kittens. The littermates can be distinguished at birth, because curly-coated kittens will also have curly whiskers. The Selkirk Rex – sometimes referred to as a cat in sheep’s clothing - is a medium-to-large, muscular, solidly built cat somewhat similar in type to the British Shorthair. It has stocky legs, big paws and a heavy, rectangular body. Selkirk’s have rounded heads with no flat planes or harsh angles. Their large, prominent round eyes can be any color. They have medium-sized, widely-spaced ears, chubby cheeks and a distinctly short, square muzzle. An extreme break, or stop, in the nose - like that so highly prized in the Persian - is a fault in this breed.\n\nThe temperament of the Selkirk Rex reflects that of the breeds used in its development: a purebred Persian and a non-pedigreed, short-haired, mixed-breed housecat that probably derived in part from American, British and/or Exotic Shorthairs. Selkirks are incredibly loving, patient and kind. These are important traits for these cats, because their unusual teddy-bear appearance makes them intriguing and practically irresistible to all who meet them. They have many of the laid-back, gentle qualities of the American and British Shorthair. They also carry the cuddly nature of the Persian and the playfulness of the Exotic Shorthair. They are tolerant of children and other pets and make affectionate, affable companions."    
+                info: "The Selkirk Rex is a one of the most recent natural additions to the purebred cat fancy. This breed is known for its extremely soft curly hair and its curly whiskers, yet it is distinct from all other curly-coated breeds. Unlike the Devon Rex and Cornish Rex, the coat of the Selkirk Rex is thick and dense, and there are longhaired and shorthaired varieties. This breed comes in a rainbow of colors, with the quality of its coat being of the utmost importance in the show ring. The curly coat of the Selkirk Rex must be plush, with a woolly feel and look, sometimes referred to as being in tousled disarray or resembling a “bad hair day.” The loose, unstructured curls are most prominent on the cat’s flanks, belly and around the neck. They are least prominent on top of the back. The dramatic curled locks on longhaired Selkirks are more noticeable than those on the shorthaired variety. Straight-haired Selkirks can be born in the same purebred litter as curly-haired kittens. The littermates can be distinguished at birth, because curly-coated kittens will also have curly whiskers. The Selkirk Rex – sometimes referred to as a cat in sheep’s clothing - is a medium-to-large, muscular, solidly built cat somewhat similar in type to the British Shorthair. It has stocky legs, big paws and a heavy, rectangular body. Selkirk’s have rounded heads with no flat planes or harsh angles. Their large, prominent round eyes can be any color. They have medium-sized, widely-spaced ears, chubby cheeks and a distinctly short, square muzzle. An extreme break, or stop, in the nose - like that so highly prized in the Persian - is a fault in this breed.<br><br>The temperament of the Selkirk Rex reflects that of the breeds used in its development: a purebred Persian and a non-pedigreed, short-haired, mixed-breed housecat that probably derived in part from American, British and/or Exotic Shorthairs. Selkirks are incredibly loving, patient and kind. These are important traits for these cats, because their unusual teddy-bear appearance makes them intriguing and practically irresistible to all who meet them. They have many of the laid-back, gentle qualities of the American and British Shorthair. They also carry the cuddly nature of the Persian and the playfulness of the Exotic Shorthair. They are tolerant of children and other pets and make affectionate, affable companions."    
             },
             {
                 id: 8,
@@ -142,7 +145,7 @@
                 price: 1900,
                 color:["Blue","Black","Red","Cream","Chocolate","Lilac"],
                 fur: "medium",
-                info: "The American Curl is a highly distinctive cat with elegant, wispy ears that curl backwards in a graceful arc, creating an alert, sophisticated look similar to that of a wild lynx. Kittens of this breed are born with straight ears. Within 4 or 5 days, however, their ears begin to curl back in a tight rosebud formation. Gradually, they unfurl, reaching their permanent shape by about 16 weeks of age. The degree of ear curl varies widely within the breed. Fanciers prefer a more dramatic curl for the show ring, while straighter-eared specimens are typically considered to be pet-quality. Some kittens in American Curl litters never develop the curly-eared trait. This breed is small to medium-sized, comes in a variety of colors and may be either long or short-haired. Either way, its coat is silky and lies flat, with little-to-no undercoat, so they are not prone to a great deal of shedding. The tail of the American Curl is fluffy and fan-like, said to resemble a feather boa. It should be brushed regularly.\n\nIn addition to its unique ears, the American Curl has an extraordinary disposition. People-oriented, playful, faithful and highly affectionate, these cats remain kitten-like well into adulthood, and usually throughout their lives. They are remarkably adaptable to new situations and are not easily stressed. American Curls adjust to almost any type of household, are gentle with children and get along extremely well with most other cats and with dogs. They are rarely territorial and typically can be introduced into a home with established pets with relative ease, as they tend to be very respectful of other animals. American Curls form very close bonds with their primary caretakers. Owners can expect their Curls to follow them from room to room throughout the house - and sometimes, even into the shower. They demand plenty of personal cuddle-time and one-on-one attention. This is an easy-going breed that is eager to please."    
+                info: "The American Curl is a highly distinctive cat with elegant, wispy ears that curl backwards in a graceful arc, creating an alert, sophisticated look similar to that of a wild lynx. Kittens of this breed are born with straight ears. Within 4 or 5 days, however, their ears begin to curl back in a tight rosebud formation. Gradually, they unfurl, reaching their permanent shape by about 16 weeks of age. The degree of ear curl varies widely within the breed. Fanciers prefer a more dramatic curl for the show ring, while straighter-eared specimens are typically considered to be pet-quality. Some kittens in American Curl litters never develop the curly-eared trait. This breed is small to medium-sized, comes in a variety of colors and may be either long or short-haired. Either way, its coat is silky and lies flat, with little-to-no undercoat, so they are not prone to a great deal of shedding. The tail of the American Curl is fluffy and fan-like, said to resemble a feather boa. It should be brushed regularly.<br><br>In addition to its unique ears, the American Curl has an extraordinary disposition. People-oriented, playful, faithful and highly affectionate, these cats remain kitten-like well into adulthood, and usually throughout their lives. They are remarkably adaptable to new situations and are not easily stressed. American Curls adjust to almost any type of household, are gentle with children and get along extremely well with most other cats and with dogs. They are rarely territorial and typically can be introduced into a home with established pets with relative ease, as they tend to be very respectful of other animals. American Curls form very close bonds with their primary caretakers. Owners can expect their Curls to follow them from room to room throughout the house - and sometimes, even into the shower. They demand plenty of personal cuddle-time and one-on-one attention. This is an easy-going breed that is eager to please."    
             },
             {
                 id:9,
@@ -153,7 +156,7 @@
                 price: 2900,
                 color:["Black","Blue","Black","Red","Cream","Chocolate","Lilac"],
                 fur:"short",
-                info: 'The Lykoi is a natural mutation from a domestic shorthair that has the appearance of a werewolf. The mutation has occurred in domestic cats over the last 20 years. DNA testing has been done by UC Davis to confirm that the cats do not carry the Sphynx/Devon Rex gene. The Lykoi breed was developed in Vonore, Tennessee and is said to resemble a werewolf. The word "lykoi" means "wolves" in Greek.\n\nThe Lykoi is a small to medium-sized cat weighing between 6-11 pounds. They have lean, athletic bodies with pointed, large ears. Their bodies are longer than their tails as well. The Lykoi is a partially hairless breed of cat with a color that is unique to them. The hair coat is a combination of amelanistic hair and solid black hair. The mix of hair can vary from being almost black to almost white.'    
+                info: 'The Lykoi is a natural mutation from a domestic shorthair that has the appearance of a werewolf. The mutation has occurred in domestic cats over the last 20 years. DNA testing has been done by UC Davis to confirm that the cats do not carry the Sphynx/Devon Rex gene. The Lykoi breed was developed in Vonore, Tennessee and is said to resemble a werewolf. The word "lykoi" means "wolves" in Greek.<br><br>The Lykoi is a small to medium-sized cat weighing between 6-11 pounds. They have lean, athletic bodies with pointed, large ears. Their bodies are longer than their tails as well. The Lykoi is a partially hairless breed of cat with a color that is unique to them. The hair coat is a combination of amelanistic hair and solid black hair. The mix of hair can vary from being almost black to almost white.'    
             },
             {
                 id:10,
@@ -178,7 +181,7 @@
                 price: 1100,
                 color:["Blue","Platinum","Champagne","Sable"],
                 fur:"medium",
-                info: "The Burmese is a stocky, smooth-coated cat that descends from ancient cats of Asia. It has become quite popular because of its delightful personality, friendly conversational skills and low-maintenance coat. Burmese are small to medium-sized cats, with broad chests and strong shoulders. They typically weigh much more than one would expect, due to their heavily muscled physique. Burmese are more substantial than their Siamese cousins, although fanciers of the breed may restate this as being fluffier, rather than fatter. British Burmese cats often have longer facial features and a more lithe body structure than the North American Burmese, which have a shorter nose and amore square body shape.\n\nAs one of the most sociable and people-oriented of all domestic cat breeds, the Burmese enjoys forming very close bonds with its owners, primary caretakers and other pets in the household. These cats are known for having especially delightful personalities. They are described as being dog-like and sunny of temperament, because by nature they are friendly, kind, gentle and outgoing. Burmese also are usually quite playful, well into adulthood. Given their Siamese ancestors, Burmese can be more vocal than many other domestic feline breeds. However, they tend to be quieter-voiced than the Siamese and typically have a softer, less raucous and more pleasant-sounding meow (with no offense meant to Siamese fanciers, to whom the Siamese voice understandably sounds like the calling of angels). Burmese enjoy having conversations with their people, whether in the home or wherever else they may be. This is a highly intelligent, thoughtful breed. Burmese are known to be extremely affectionate, and they love to snuggle and cuddle with their favorite people."    
+                info: "The Burmese is a stocky, smooth-coated cat that descends from ancient cats of Asia. It has become quite popular because of its delightful personality, friendly conversational skills and low-maintenance coat. Burmese are small to medium-sized cats, with broad chests and strong shoulders. They typically weigh much more than one would expect, due to their heavily muscled physique. Burmese are more substantial than their Siamese cousins, although fanciers of the breed may restate this as being fluffier, rather than fatter. British Burmese cats often have longer facial features and a more lithe body structure than the North American Burmese, which have a shorter nose and amore square body shape.<br><br>As one of the most sociable and people-oriented of all domestic cat breeds, the Burmese enjoys forming very close bonds with its owners, primary caretakers and other pets in the household. These cats are known for having especially delightful personalities. They are described as being dog-like and sunny of temperament, because by nature they are friendly, kind, gentle and outgoing. Burmese also are usually quite playful, well into adulthood. Given their Siamese ancestors, Burmese can be more vocal than many other domestic feline breeds. However, they tend to be quieter-voiced than the Siamese and typically have a softer, less raucous and more pleasant-sounding meow (with no offense meant to Siamese fanciers, to whom the Siamese voice understandably sounds like the calling of angels). Burmese enjoy having conversations with their people, whether in the home or wherever else they may be. This is a highly intelligent, thoughtful breed. Burmese are known to be extremely affectionate, and they love to snuggle and cuddle with their favorite people."    
             },{
                 id:12,
                 breed: "Siamese",
@@ -192,7 +195,7 @@
                 price: 700,
                 color:["Seal","Chocolate","Blue", "Lilac","Black","White", "Cream"],
                 fur: "short",
-                info: "An ancient breed, the Siamese is considered the quintessential people cat because she loves being with her human companions. The sleek, striking Siamese has deep blue almond-shaped eyes that radiate intelligence and emotion. Affectionately known as Meezers, this breed is sociable, entertaining and playful. The Siamese is tolerant of children 6 and older and enjoys other cats but may not get along with dogs. The Siamese breed was used to create the Colorpoint Shorthair, which is identical to the Siamese except for her distinctive, unique colors. \n\nSiamese cats are known to be affectionate, friendly, loyal and bold. The Blue Point Siamese is said by some to be the gentlest and most affectionate of all the Colorpoint Shorthair varieties, although certainly many fanciers of the other Siamese color varieties might dispute that characterization. Siamese have been described as precocious, gregarious, intelligent and outgoing. They are extremely friendly with people and other pets that they know and like, and they thrive on companionship and affection. They form extremely close bonds with their primary caretaker and do not like to be left alone for long periods of time. They often do better kept in household pairs or small groups, so that they can entertain each other while their owners are away. Some Siamese can have a nervous personality and most do not like sudden changes in their living environment. Siamese can be aloof toward strangers and are often skittish around newcomers to the home."    
+                info: "An ancient breed, the Siamese is considered the quintessential people cat because she loves being with her human companions. The sleek, striking Siamese has deep blue almond-shaped eyes that radiate intelligence and emotion. Affectionately known as Meezers, this breed is sociable, entertaining and playful. The Siamese is tolerant of children 6 and older and enjoys other cats but may not get along with dogs. The Siamese breed was used to create the Colorpoint Shorthair, which is identical to the Siamese except for her distinctive, unique colors. <br><br>Siamese cats are known to be affectionate, friendly, loyal and bold. The Blue Point Siamese is said by some to be the gentlest and most affectionate of all the Colorpoint Shorthair varieties, although certainly many fanciers of the other Siamese color varieties might dispute that characterization. Siamese have been described as precocious, gregarious, intelligent and outgoing. They are extremely friendly with people and other pets that they know and like, and they thrive on companionship and affection. They form extremely close bonds with their primary caretaker and do not like to be left alone for long periods of time. They often do better kept in household pairs or small groups, so that they can entertain each other while their owners are away. Some Siamese can have a nervous personality and most do not like sudden changes in their living environment. Siamese can be aloof toward strangers and are often skittish around newcomers to the home."    
             },{
                 id:13,
                 breed: "Persian",
@@ -206,7 +209,7 @@
                 price: 2600,
                 color:["White","Blue","Black","Red","Cream","Chocolate","Lilac"],
                 fur: "long",
-                info: "The Persian, also known as the Persian Longhair, is an elegant, graceful, gentle breed whose most distinguishing characteristics are its remarkable coat and its unique head. Today, the Persian is one of the most popular of all feline breeds due to its exceptional beauty, kind temperament and easy-going disposition. While their basic temperaments have changed little over time, their conformation and overall appearance have changed considerably. Modern Persians are medium to large in size and stocky, with short thick legs, massive rumps and distinctively cobby profiles. Their large, round paws are tufted with fur. The Persian’s head is broad in skull, round and unusually large for the size of its body, while its ears are especially tiny in comparison and are tufted, which is called having “ear furnishings.” The Persian’s eyes are big, round and very expressive. Whatever their color, deepness of eye color is preferred in this breed. The Persian’s open, pansy-like face is famously flat, with a perky up-turned nose and an extremely short muzzle that is barely noticeable. Its neck is short and thick, with a distinctive mane-like ruff, and its tail is short and bushy. The heads and facial features of Persians have become increasingly exaggerated over time. \n\nThe coat of the Persian has also become more exaggerated over the years. It is extraordinarily long, silky, dense, fine and profuse. Persians have an extremely thick, soft undercoat, with a longer outer layer made up of more coarse guard hairs. The Persian’s coat requires daily grooming (including brushing and combing), along with regular bathing, to prevent the development of nasty tangles and mats. This is necessary whether or not the cat is being entered in the show ring. Persians tend to shed year-round, even more so than other long-haired breeds. They should be housed exclusively indoors to protect their prized coats, as well as to protect them from parasites and other perils of outdoor living."    
+                info: "The Persian, also known as the Persian Longhair, is an elegant, graceful, gentle breed whose most distinguishing characteristics are its remarkable coat and its unique head. Today, the Persian is one of the most popular of all feline breeds due to its exceptional beauty, kind temperament and easy-going disposition. While their basic temperaments have changed little over time, their conformation and overall appearance have changed considerably. Modern Persians are medium to large in size and stocky, with short thick legs, massive rumps and distinctively cobby profiles. Their large, round paws are tufted with fur. The Persian’s head is broad in skull, round and unusually large for the size of its body, while its ears are especially tiny in comparison and are tufted, which is called having “ear furnishings.” The Persian’s eyes are big, round and very expressive. Whatever their color, deepness of eye color is preferred in this breed. The Persian’s open, pansy-like face is famously flat, with a perky up-turned nose and an extremely short muzzle that is barely noticeable. Its neck is short and thick, with a distinctive mane-like ruff, and its tail is short and bushy. The heads and facial features of Persians have become increasingly exaggerated over time. <br><br>The coat of the Persian has also become more exaggerated over the years. It is extraordinarily long, silky, dense, fine and profuse. Persians have an extremely thick, soft undercoat, with a longer outer layer made up of more coarse guard hairs. The Persian’s coat requires daily grooming (including brushing and combing), along with regular bathing, to prevent the development of nasty tangles and mats. This is necessary whether or not the cat is being entered in the show ring. Persians tend to shed year-round, even more so than other long-haired breeds. They should be housed exclusively indoors to protect their prized coats, as well as to protect them from parasites and other perils of outdoor living."    
             } 
         ]
 
@@ -219,18 +222,20 @@
         for (let i = 0; i < numberOfItemsInCart; i++){
             sum += shoppingCart[i].price;
         }
-console.log(numberOfItemsInCart);
+        
         function addToCart(cat_id){
             
         }
         function displayCartItemNumber(){
             let span = document.getElementById("cart_top_bar");
-            span.innerHTML = numberOfItemsInCart;
+            span.innerHTML += shoppingCart.length;
+            console.log(span.innerHTML);
+            console.log(shoppingCart.length);
         }
         
         function onSiteLoad(){ 
             let store_container = document.getElementById("store_container");
-
+            store_container.innerHTML = "";
             for (let i=0; i < cat_data.length;i++) {
                 let newListItem = document.createElement('div');
                 newListItem.innerHTML = `
@@ -242,7 +247,7 @@ console.log(numberOfItemsInCart);
                         
                         <div class="store_item_name"> ${cat_data[i].breed}</div>
                         <div class="store_item_price"> ${cat_data[i].price} €</div></div>
-                        <span class="addCartHomeView" onclick="addToCart()" onclick="displayCartItemNumber()"><img class="cart_img_card" src="images_shop/other/cart.png">+</span>     
+                        <span class="addCartHomeView" onclick="addToCart()" onclick="displayCartItemNumber()"><button class="btn_buy"><img class="cart_img_card" src="images_shop/other/cart.png">+</button></span>     
                         </div>
                     </a>        
                     `;
@@ -253,10 +258,110 @@ console.log(numberOfItemsInCart);
             }
         }
 
-        /* function hoverView(){
-            let card_img = document.getElementsByClassName("store_item_img")
-            card_img.innerHTML = `<img class="store_item_img" src=${cat_data.img_3}>`
-        } */
+        function individualView(cat){
+
+            if (typeof cat.img_3 == 'undefined'){
+                    let store_container = document.getElementById("store_container");
+                    store_container.innerHTML = ` 
+                    <div class="trans-bg">
+                    <div class="container_indi">
+                        
+                        <div class="indiName"> ${cat.breed}</div>
+                        <div class="indiImgCycle"> 
+                            <img src=${cat.img_l}>
+                        </div>
+                        <div class="indiImgCycle">
+                            <img src=${cat.img_2}>
+                        </div>
+                        
+
+                            <a class="prev" onclick="plusImg(-1)">❮</a>
+                            <a class="next" onclick="plusImg(1)">❯</a>
+                            </div>
+                            
+
+                        <div class="colors"> <p>The ${cat.breed} is available in: \n ${cat.color}</p></div>
+                        <div class="indiInfo"> ${cat.info}</div>
+                        <br>
+                        <button class="btn_back" onclick="onSiteLoad()">Back to all</button>
+                    </div>
+                `;
+                
+                showImg(imgIndex);
+            }else{ 
+
+                let store_container = document.getElementById("store_container");
+                store_container.innerHTML = ` 
+                    <div class="trans-bg">
+                        <div class="container_indi">
+
+                        <div class="indiName"> ${cat.breed}</div>
+
+                        <div class="indiImgCycle"> 
+                            <img src=${cat.img_l}>
+                        </div>
+
+                        <div class="indiImgCycle">
+                            <img src=${cat.img_2}>
+                        </div>
+
+                        <div class="indiImgCycle"> 
+                            <img src=${cat.img_3}>
+                        </div>
+
+                        <div class="indiImgCycle">
+                            <img src=${cat.img_4}>
+                        </div>
+
+                        <div class="indiImgCycle"> 
+                            <img src=${cat.img_5}>
+                        </div>
+                        
+
+                            
+                            <a class="prev" onclick="plusImg(-1)">❮</a>
+                            <a class="next" onclick="plusImg(1)">❯</a>
+                        </div>
+
+                        <div class="colors"> <p>${cat.breed} is available in: \n ${cat.color}</p></div>
+                        <div class="indiInfo"> ${cat.info}</div>
+                        <br>
+                        <button class="btn_back" onclick="onSiteLoad()">Back to all</button>
+                   </div>
+                   `;
+                   showImg(imgIndex); 
+                }
+            
+                
+    }
+
+            let imgIndex = 1;
+            
+            
+            function plusImg(n) {
+                showImg(imgIndex += n);
+            }
+            
+            function currentImg(n) {
+                showImg(imgIndex = n);
+            }
+        
+      
+            function showImg(n) {
+                let imgs = document.getElementsByClassName("indiImgCycle");
+                let dots = document.getElementsByClassName("col");
+                if (n > imgs.length) {imgIndex = 1}
+                if (n < 1) {imgIndex = imgs.length}
+                for (let i = 0; i < imgs.length; i++) {
+                    imgs[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                imgs[imgIndex-1].style.display = "block";
+                dots[imgIndex-1].className += " active";
+            }
+
 
         function search(){
             let searchCards = document.querySelectorAll(".store_card")
@@ -281,3 +386,32 @@ console.log(numberOfItemsInCart);
 </body>
 </html>
 
+<!-- 
+<div class="row">
+<div class="col">
+    <img src=${cat.img_l} onclick="currentImg(1)"> </div>
+
+<div class="col">
+    <img src=${cat.img_2} onclick="currentImg(2)"> </div>
+    
+<div class="col">
+    <img src=${cat.img_3} onclick="currentImg(3)"> </div>
+    
+<div class="col">
+    <img src=${cat.img_4} onclick="currentImg(4)"> </div>
+    
+<div class="col">
+    <img src=${cat.img_5} onclick="currentImg(5)"> </div>
+
+</div>  -->
+
+<!-- 
+
+<div class="row">
+<div class="col">
+    <img src=${cat.img_l} onclick="currentImg(1)"> </div>
+
+<div class="col">
+    <img src=${cat.img_2} onclick="currentImg(2)"> </div>
+
+</div>  -->
