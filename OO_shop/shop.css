@@ -40,6 +40,10 @@ body{
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
+/* .indiInfo{
+    padding-left: 5%;
+    padding-right: 5%;
+} */
 .store_item_name{
     padding-top: 0.4rem;
     font-size: larger;
@@ -49,6 +53,7 @@ body{
     padding-bottom: 0.5rem;
 }
 #store_container{
+    width: 90%;
     text-align: center;
     justify-content: center;
     display: inline-flex;
@@ -137,6 +142,7 @@ body{
     align-items: center;
     align-content: center;
     float:center;
+    justify-content: center;
 }
 
 .indiImgCycle{
@@ -180,7 +186,6 @@ background-color: rgba(0, 0, 0, 0.8);
 
 a {
     text-decoration: none;
-    font-family: "Comic Sans MS";
     display: inline-block;
 }
 
@@ -198,4 +203,7 @@ a {
 
 .row{
     box-sizing: inherit;
+}
+.colors{
+    width: 3000px;
 }

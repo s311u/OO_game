@@ -57,29 +57,28 @@
         if (typeof cat.img_3 == 'undefined'){
                 let store_container = document.getElementById("store_container");
                 store_container.innerHTML = ` 
-                <div class="container_indi">
-                    
-                    <div class="indiName"> ${cat.breed}</div>
-                    <div class="indiImgCycle"> 
-                        <img src=${cat.img_l}>
-                    </div>
-                    <div class="indiImgCycle">
-                        <img src=${cat.img_2}>
-                    </div>
-                    <br>
-                    <span class="addCartIndiView" onclick="addToCart(${cat.id}); displayCartItemNumber()"><button class="btn_buy"><img class="cart_img_card" src="images_shop/other/cart.png">+</button></span>      
-
-                        <a class="prev" onclick="plusImg(-1)">❮</a>
-                        <a class="next" onclick="plusImg(1)">❯</a>
-                        </div>
+                    <div class="container_indi">
                         
+                        <div class="indiName"> ${cat.breed}</div>
+                        <div class="indiImgCycle"> 
+                            <img src=${cat.img_l}>
+                        </div>
+                        <div class="indiImgCycle">
+                            <img src=${cat.img_2}>
+                        </div>
+                        <br>
+                        <span class="addCartIndiView" onclick="addToCart(${cat.id}); displayCartItemNumber()"><button class="btn_buy"><img class="cart_img_card" src="images_shop/other/cart.png">+</button></span>      
 
-                    <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: \n ${cat.color}</p></div>
-                    <div class="indiInfo"> ${cat.info}</div>
-                    <br>
-                    <button class="btn_back" onclick="onSiteLoad()">Back to all</button>
-              
-            `;
+                            <a class="prev" onclick="plusImg(-1)">❮</a>
+                            <a class="next" onclick="plusImg(1)">❯</a>
+                    </div>
+                            
+                        <br>
+                        <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: \n ${cat.color}</p></div>
+                        <div class="indiInfo"> ${cat.info}</div>
+                        <br>
+                        <button class="btn_back" onclick="onSiteLoad()">Back to all</button>
+                `;
             
             showImg(imgIndex);
         }else{ 
@@ -115,7 +114,7 @@
                         <a class="prev" onclick="plusImg(-1)">❮</a>
                         <a class="next" onclick="plusImg(1)">❯</a>
                     </div>
-
+                    <br>
                     <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: \n ${cat.color}</p></div>
                     <div class="indiInfo"> ${cat.info}</div>
                     <br>
