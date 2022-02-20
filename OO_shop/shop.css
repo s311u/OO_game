@@ -70,6 +70,29 @@ body{
     display: flex; 
     background-image: linear-gradient(to left, pink, lightpink, plum, thistle);
 }
+.addCartIndiView{
+    height: 200px!important;
+    padding-top: 5rem!important;
+}
+.indiImgCycle>img{
+    border: 1px solid grey;
+    border-radius: 2rem!important;
+}
+.addCartIndiView>button{
+    height: 100px;
+    background-image: linear-gradient(to right, pink, lightpink, plum, thistle);
+}
+.addCartIndiView>button>img{
+    width: 100px;
+    height: auto!important;
+}
+.cart_top{
+    vertical-align: middle;
+    display: inline;
+}
+.cart_top>span{
+    font-size: larger;
+}
 .search{
     padding: 8px;
     width: 100%;
@@ -107,7 +130,7 @@ body{
     box-shadow: 0 4px 8px 0 grey;
 }
 
-.trans-bg{
+.trans-bg{ /* useless since i deleted the element (caused failure and i was too lazy to fix */
     background-image: linear-gradient(to top, pink, lightpink, plum, thistle);
     border-radius: 2rem;
     text-align: center;
@@ -129,7 +152,7 @@ body{
     cursor: pointer;
     position: absolute;
     display: inline-block;
-    top: 60%;
+    top: 45%;
     width: auto;
     padding: 16px;
     margin-top: -50px;
