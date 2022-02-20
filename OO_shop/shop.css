@@ -207,3 +207,8 @@ a {
 .colors{
     width: 3000px;
 }
+
+.indiPrice{
+    font-size: x-large;
+    font-weight: bold;
+}

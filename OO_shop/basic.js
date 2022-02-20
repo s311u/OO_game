@@ -67,6 +67,9 @@
                             <img src=${cat.img_2}>
                         </div>
                         <br>
+                        
+                        <div class="indiPrice">${cat.price} €</div>
+                        <br>
                         <span class="addCartIndiView" onclick="addToCart(${cat.id}); displayCartItemNumber()"><button class="btn_buy"><img class="cart_img_card" src="images_shop/other/cart.png">+</button></span>      
 
                             <a class="prev" onclick="plusImg(-1)">❮</a>
@@ -74,7 +77,7 @@
                     </div>
                             
                         <br>
-                        <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: \n ${cat.color}</p></div>
+                        <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: ${cat.color}</p></div>
                         <div class="indiInfo"> ${cat.info}</div>
                         <br>
                         <button class="btn_back" onclick="onSiteLoad()">Back to all</button>
@@ -109,13 +112,16 @@
                         <img src=${cat.img_5}>
                     </div>
                     <br>
+                    
+                    <div class="indiPrice">${cat.price} €</div>
+                    <br>
                     <span class="addCartIndiView" onclick="addToCart(${cat.id}); displayCartItemNumber()"><button class="btn_buy"><img class="cart_img_card" src="images_shop/other/cart.png">+</button></span>      
                     
                         <a class="prev" onclick="plusImg(-1)">❮</a>
                         <a class="next" onclick="plusImg(1)">❯</a>
                     </div>
                     <br>
-                    <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: \n ${cat.color}</p></div>
+                    <div class="colors"> <p>The <strong>${cat.breed}</strong> is available in: ${cat.color}</p></div>
                     <div class="indiInfo"> ${cat.info}</div>
                     <br>
                     <button class="btn_back" onclick="onSiteLoad()">Back to all</button>
@@ -168,6 +174,12 @@
                 searchCards[i].style.display = "block"
             }
         }
+    }
+    
+    function cartView(){
+        let store_container = document.getElementById("store_container");
+        store_container.innerHTML = ` 
+        `;
     }
     
     
