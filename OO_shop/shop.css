@@ -118,7 +118,9 @@ body{
     margin-top:1rem;
     margin-right: 0.5rem;
 }
-
+tr:nth-child(even){
+    background-image: linear-gradient(to right, pink, lightpink, plum, thistle);
+}
 #site_name{
     font-size: larger;
     color: white;
