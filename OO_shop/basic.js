@@ -1,15 +1,9 @@
-
     let numberOfItemsInCart = 0;
-    let sum = 0;
-    for (let i = 0; i < numberOfItemsInCart; i++){
-        sum += shoppingCart[i].price;
-    }
     
     function addToCart(cat){
         cat_data[cat-1].amount = cat_data[cat-1].amount + 1;
     }
 
-    
 
     function displayCartItemNumber(){
         
@@ -51,6 +45,7 @@
         }
     }
 
+
     function individualView(cat){
 
         if (typeof cat.img_3 == 'undefined'){
@@ -83,7 +78,8 @@
                 `;
             
             showImg(imgIndex);
-        }else{ 
+
+        } else { 
 
             let store_container = document.getElementById("store_container");
             store_container.innerHTML = ` 
@@ -129,12 +125,10 @@
                showImg(imgIndex); 
                
             }
-        
-            
-}
+        }
+
 
         let imgIndex = 1;
-        
         
         function plusImg(n) {
             showImg(imgIndex += n);
@@ -147,31 +141,29 @@
   
         function showImg(n) {
             let imgs = document.getElementsByClassName("indiImgCycle");
-            let dots = document.getElementsByClassName("col");
-            if (n > imgs.length) {imgIndex = 1}
-            if (n < 1) {imgIndex = imgs.length}
+
+            if (n > imgs.length) {
+                imgIndex = 1
+            }
+
+            if (n < 1) {
+                imgIndex = imgs.length
+            }
+
             for (let i = 0; i < imgs.length; i++) {
                 imgs[i].style.display = "none";
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
+
             imgs[imgIndex-1].style.display = "block";
         }
 
 
     function search(){
         try {
-                let store_container = document.getElementById("store_container");
-            
-            
-            /* 
-            store_container.innerHTML =""; */
-            /* onSiteLoad(); */
+            let store_container = document.getElementById("store_container");
             let searchCards = document.querySelectorAll(".store_card")
             let input = document.getElementById("search").value //mixed case input
             input = input.toLowerCase(); 
-            let resultCards = document.getElementsByClassName("store_card");
         
             for (let i = 0; i < cat_data.length; i++){
                 if (!cat_data[i].breed.toLowerCase().includes(input) && !cat_data[i].info.toLowerCase().includes(input)){
@@ -190,11 +182,13 @@
             let button = document.createElement('div');
             button.innerHTML = '<div class="newRow"><button class="btn_back" onclick="onSiteLoad()">Back to all</button></div>'
             store_container.appendChild(button);
+
         } catch {
             alert("Search function works only in the main view for now. Please do not refresh the page before closing this alert");
         }
 
     }
+
 
     function advancedSearch(){
         alert("Advanced search function has not been implemented yet! Please use the regular search function instead.")
@@ -210,7 +204,7 @@
         let priceContainer = document.getElementById("cartItemCostTot" + cat);
         priceContainer.innerHTML = `${cat_data[cat].amount * cat_data[cat].price} €`;
 
-        let totalCostContainer = document.getElementById("finalpriceinner");
+        let totalCostContainer = document.getElementById("finalPriceInner");
         let cartTotalCost = 0;
         for (let i = 0; i < whichCats.length; i++) {
             cartTotalCost = cartTotalCost + (cat_data[whichCats[i]].amount * cat_data[whichCats[i]].price)
@@ -222,18 +216,12 @@
     }
 
     function plusAmount(cat){
-        console.log("plus")
-        console.log(cat_data[cat].amount)
         cat_data[cat].amount = cat_data[cat].amount + 1;
-        console.log(cat_data[cat].amount)
         cartUpdate(cat)
     }
 
     function minusAmount(cat){
-        console.log("minus")
-        console.log(cat_data[cat].amount)
         cat_data[cat].amount = cat_data[cat].amount - 1;
-        console.log(cat_data[cat].amount)
         if(cat_data[cat].amount < 0){
             cat_data[cat].amount = 0;
         }
@@ -248,27 +236,21 @@
         let tbody = document.createElement('tbody');        
         let tr_first = document.createElement('tr');
         tr_first.innerHTML = `
-            
-            
             <th></th>
             <th>Breed</th>
             <th>Amount</th>
             <th>Cost of one</th>
             <th>Cost of all</th>
-            
-
         `;
 
         tbody.appendChild(tr_first);
 
-        
         for (let i = 0; i < cat_data.length; i++) {
             let tr = document.createElement('tr');
             if (cat_data[i].amount > 0){
-                console.log("hello"+ i)
                 tr.innerHTML = `
                 <td class="cartItemImage"><img src="${cat_data[i].img_s}"></td>
-                <td class="cartItemBreed" onclick="individualView(${cat_data[i]})">${cat_data[i].breed} </td>
+                <td class="cartItemBreed">${cat_data[i].breed} </td>
                 <td class="cartItemAmount">
                     <span class="cartItemAmountMinus"><button class="btn-minus" onclick="minusAmount(${i})"> - </button></span>
                     <span class="cartItemAmountCurrent" id="cartItemAmountCurrent${i}"> ${cat_data[i].amount}</span>
@@ -278,13 +260,12 @@
                 <td id="cartItemCostTot${i}" class = "cartItemCostTot"> ${cat_data[i].price * cat_data[i].amount} €</td>
 
                 `;
-            tbody.appendChild(tr);
-            console.log("meow" + i)
 
-            if (!whichCats.includes(i)){
-                whichCats.push(i);
-            }
-            
+                tbody.appendChild(tr);
+
+                if (!whichCats.includes(i)){
+                    whichCats.push(i);
+                }
             }
         }
 
@@ -293,8 +274,9 @@
         for (let i = 0; i < whichCats.length; i++) {
             cartTotalCost = cartTotalCost + (cat_data[whichCats[i]].amount * cat_data[whichCats[i]].price)
         }
+
         finalPrice.innerHTML = `
-        <div id="finalpriceinner">
+        <div id="finalPriceInner">
         The final price of your order is ${cartTotalCost} €. </div>`;
         
 
@@ -307,11 +289,4 @@
         button.innerHTML = '<div class="newRow"><button class="btn_back" onclick="onSiteLoad()">Back to all</button></div>'
         store_container.appendChild(button);
 
-        /* let finalRow= document.createElement('div');
-        finalRow.innerHTML = '<span class="cartFinalRow">' */
     }
-    
-    
-    
-        
-    

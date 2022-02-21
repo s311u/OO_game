@@ -40,10 +40,6 @@ body{
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
-/* .indiInfo{
-    padding-left: 5%;
-    padding-right: 5%;
-} */
 .store_item_name{
     padding-top: 0.4rem;
     font-size: larger;
@@ -127,7 +123,6 @@ tr:nth-child(even){
     margin-left: 1.5rem;
     margin-right: 0.5rem;
 }
-
 .gap{
     width: 2rem
 }
@@ -228,6 +223,6 @@ table{
     font-weight: 400;
 
 }
-#finalpriceinner{
+#finalPriceInner{
     font-size: larger;
 }
