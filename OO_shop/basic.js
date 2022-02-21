@@ -20,7 +20,6 @@
         numberOfItemsInCart += amount;
         }
 
-        console.log(numberOfItemsInCart);
         let span = document.getElementById("cart_top_bar");
         span.innerHTML = numberOfItemsInCart;
     }
@@ -128,6 +127,7 @@
             
                `;
                showImg(imgIndex); 
+               
             }
         
             
@@ -157,29 +157,158 @@
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             imgs[imgIndex-1].style.display = "block";
-            dots[imgIndex-1].className += " active";
         }
 
 
     function search(){
-        let searchCards = document.querySelectorAll(".store_card")
-        let input = document.getElementById("search").value //mixed case input
-        input = input.toLowerCase(); 
-        let resultCards = document.getElementsByClassName("store_card");
-       
-        for (let i = 0; i < cat_data.length; i++){
-            if (!cat_data[i].breed.toLowerCase().includes(input) && !cat_data[i].info.toLowerCase().includes(input)){
-                searchCards[i].style.display = "none";
-            } else {
-                searchCards[i].style.display = "block"
+        try {
+                let store_container = document.getElementById("store_container");
+            
+            
+            /* 
+            store_container.innerHTML =""; */
+            /* onSiteLoad(); */
+            let searchCards = document.querySelectorAll(".store_card")
+            let input = document.getElementById("search").value //mixed case input
+            input = input.toLowerCase(); 
+            let resultCards = document.getElementsByClassName("store_card");
+        
+            for (let i = 0; i < cat_data.length; i++){
+                if (!cat_data[i].breed.toLowerCase().includes(input) && !cat_data[i].info.toLowerCase().includes(input)){
+                    searchCards[i].style.display = "none";
+                } else {
+                    searchCards[i].style.display = "block";
+                }
             }
+
+            for (let i = 0; i <store_container.childNodes.length; i++) {
+                if (store_container.childNodes[i].innerHTML.includes("Back to")){
+                    store_container.removeChild(store_container.childNodes[i])
+                }
+            }
+            
+            let button = document.createElement('div');
+            button.innerHTML = '<div class="newRow"><button class="btn_back" onclick="onSiteLoad()">Back to all</button></div>'
+            store_container.appendChild(button);
+        } catch {
+            alert("Search function works only in the main view for now. Please do not refresh the page before closing this alert");
         }
+
     }
+
+    function advancedSearch(){
+        alert("Advanced search function has not been implemented yet! Please use the regular search function instead.")
+    }
+
+
+    let whichCats = [];
+
+    function cartUpdate(cat){
+        let amountContainer = document.getElementById("cartItemAmountCurrent" + cat);
+        amountContainer.innerHTML = cat_data[cat].amount;
+
+        let priceContainer = document.getElementById("cartItemCostTot" + cat);
+        priceContainer.innerHTML = `${cat_data[cat].amount * cat_data[cat].price} €`;
+
+        let totalCostContainer = document.getElementById("finalpriceinner");
+        let cartTotalCost = 0;
+        for (let i = 0; i < whichCats.length; i++) {
+            cartTotalCost = cartTotalCost + (cat_data[whichCats[i]].amount * cat_data[whichCats[i]].price)
+        }
+        totalCostContainer.innerHTML = `The final price of your order is ${cartTotalCost} €.`;
+
+        displayCartItemNumber();
+        
+    }
+
+    function plusAmount(cat){
+        console.log("plus")
+        console.log(cat_data[cat].amount)
+        cat_data[cat].amount = cat_data[cat].amount + 1;
+        console.log(cat_data[cat].amount)
+        cartUpdate(cat)
+    }
+
+    function minusAmount(cat){
+        console.log("minus")
+        console.log(cat_data[cat].amount)
+        cat_data[cat].amount = cat_data[cat].amount - 1;
+        console.log(cat_data[cat].amount)
+        if(cat_data[cat].amount < 0){
+            cat_data[cat].amount = 0;
+        }
+        cartUpdate(cat)
+    }
+
     
     function cartView(){
         let store_container = document.getElementById("store_container");
-        store_container.innerHTML = ` 
+        store_container.innerHTML ="";
+        let table = document.createElement('table');
+        let tbody = document.createElement('tbody');        
+        let tr_first = document.createElement('tr');
+        tr_first.innerHTML = `
+            
+            
+            <th></th>
+            <th>Breed</th>
+            <th>Amount</th>
+            <th>Cost of one</th>
+            <th>Cost of all</th>
+            
+
         `;
+
+        tbody.appendChild(tr_first);
+
+        
+        for (let i = 0; i < cat_data.length; i++) {
+            let tr = document.createElement('tr');
+            if (cat_data[i].amount > 0){
+                console.log("hello"+ i)
+                tr.innerHTML = `
+                <td class="cartItemImage"><img src="${cat_data[i].img_s}"></td>
+                <td class="cartItemBreed" onclick="individualView(${cat_data[i]})">${cat_data[i].breed} </td>
+                <td class="cartItemAmount">
+                    <span class="cartItemAmountMinus"><button class="btn-minus" onclick="minusAmount(${i})"> - </button></span>
+                    <span class="cartItemAmountCurrent" id="cartItemAmountCurrent${i}"> ${cat_data[i].amount}</span>
+                    <span class="cartItemAmountPlus"><button class="btn-plus" onclick="plusAmount(${i})"> + </button></span>
+                </td> 
+                <td class="cartItemCostOne"> ${cat_data[i].price} €</td>
+                <td id="cartItemCostTot${i}" class = "cartItemCostTot"> ${cat_data[i].price * cat_data[i].amount} €</td>
+
+                `;
+            tbody.appendChild(tr);
+            console.log("meow" + i)
+
+            if (!whichCats.includes(i)){
+                whichCats.push(i);
+            }
+            
+            }
+        }
+
+        let finalPrice = document.createElement('div');
+        let cartTotalCost = 0;
+        for (let i = 0; i < whichCats.length; i++) {
+            cartTotalCost = cartTotalCost + (cat_data[whichCats[i]].amount * cat_data[whichCats[i]].price)
+        }
+        finalPrice.innerHTML = `
+        <div id="finalpriceinner">
+        The final price of your order is ${cartTotalCost} €. </div>`;
+        
+
+        table.appendChild(tbody);
+        store_container.appendChild(table);
+        store_container.appendChild(finalPrice)
+
+        
+        let button = document.createElement('div');
+        button.innerHTML = '<div class="newRow"><button class="btn_back" onclick="onSiteLoad()">Back to all</button></div>'
+        store_container.appendChild(button);
+
+        /* let finalRow= document.createElement('div');
+        finalRow.innerHTML = '<span class="cartFinalRow">' */
     }
     
     

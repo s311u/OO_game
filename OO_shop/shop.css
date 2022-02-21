@@ -212,3 +212,20 @@ a {
     font-size: x-large;
     font-weight: bold;
 }
+.newRow{
+    width: 100%;
+}
+table{
+    width: 100%;
+}
+.cartItemImage>img{
+    width: 300px;
+}
+.cartItemBreed, .cartItemAmountCurrent, .cartItemCostOne, .cartItemCostTot{
+    font-size: larger;
+    font-weight: 400;
+
+}
+#finalpriceinner{
+    font-size: larger;
+}
