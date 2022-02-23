@@ -1,12 +1,8 @@
-/* const { exit } = require('process'); */
 const prompts = require('prompts');
-const action = require('./choices.js');
-
-
+const choices = require('./choices.js');
 
 
 async function gameLoop() {
-    let continueGame = true;
 
     const actionChoices = [
         { title: 'Look around', value: 'look' },
@@ -21,13 +17,8 @@ async function gameLoop() {
       message: 'Choose your action',
       choices: actionChoices
     });
-
-    console.log('You selected ' + response.value);
-    action.action(response.value);
+    choices.action(response.value);
     
-    if(continueGame) {
-      gameLoop();
-    }    
 }
 
 
@@ -37,3 +28,5 @@ console.log('WELCOME TO THE DUNGEONS OF LORD OBJECT ORIENTUS!')
 console.log('================================================')
 console.log('You walk down the stairs to the dungeons')
 gameLoop();
+
+module.exports.gameLoop = gameLoop;

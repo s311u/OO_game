@@ -1,34 +1,34 @@
 const roomsFile = require('./rooms.js');
-const playerFile = require('./characters.js'); // i later on realized it was useless to have a separate player file and enemy file but i was too tired to replace
-const enemiesFile = require('./characters.js')
-const main = require('./main.js');
+const characters = require('./characters.js');
+const main = require('./game.js');
 const prompts = require('prompts');
 
-function action(choice){
-    switch(choice){
+function action(choice) {
+    let connectedRooms = [];
+    for (let i = 0; i < roomsFile.rooms[characters.player.pos].connections.length; i++) {
+        connectedRooms.push(roomsFile.rooms[roomsFile.rooms[characters.player.pos].connections[i]].name)
+    }
+    switch (choice) {
         case "look":
-            console.log(playerFile.player.name + " looks around");
-            console.log(playerFile.player.name + " is in the " + roomsFile.rooms[playerFile.player.pos].name + " and it is a " + roomsFile.rooms[playerFile.player.pos].info);
-            let connectedRooms = [];
-            for (let i = 0; i < roomsFile.rooms[playerFile.player.pos].connections.length; i++){
-                connectedRooms.splice(0,0,roomsFile.rooms[roomsFile.rooms[playerFile.player.pos].connections[i]].name)
-            }
+            console.log(characters.player.name + " looks around");
+            console.log(characters.player.name + " is in the " + roomsFile.rooms[characters.player.pos].name + " and it is a " + roomsFile.rooms[characters.player.pos].info);
             console.log("\nThere are doorways leading to: ")
-            for (let i = 0; i < connectedRooms.length; i++){
-                console.log(connectedRooms[i].name)
+            for (let i = 0; i < connectedRooms.length; i++) {
+                console.log(connectedRooms[i])
             }
-            if(roomsFile.rooms[playerFile.player.pos].enemyId.length != 0){
-                enemiesFile.enemies[roomsFile.rooms[playerFile.player.pos].enemyId].attack();
+            if (roomsFile.rooms[characters.player.pos].enemyId.length != 0) {
+                characters.enemies[roomsFile.rooms[characters.player.pos].enemyId].attack(characters.player);
             }
+            main.gameLoop();
             break;
 
-        case "goTo":           
+        case "goTo":
             async function chooseRoom() {
                 let actionChoices = [];
-                for(let i = 0; i < roomsFile.rooms[playerFile.player.pos].connectedRooms; i++){
+                for (let i = 0; i < connectedRooms.length; i++) {
                     actionChoices.push({
-                        title: roomsFile.rooms[playerFile.player.pos].connectedRooms[i].name,
-                        value: roomsFile.rooms[playerFile.player.pos].connectedRooms[i].id
+                        title: roomsFile.rooms[roomsFile.rooms[characters.player.pos].connections[i]].name,
+                        value: roomsFile.rooms[roomsFile.rooms[characters.player.pos].connections[i]].id
                     })
                 }
 
@@ -38,29 +38,38 @@ function action(choice){
                     message: 'Which room are you going to?',
                     choices: actionChoices
                 })
-                
-                playerFile.player.pos = response.value;
-                console.log(playerFile.player.name + ' moves to ' + roomsFile.rooms[response.value].name + '\n-----------------------');
-                if(response.value == 3){
-                    console.log('Congratulations ' + playerFile.player.name + "! You made it through the dungeon alive!\n--------------------")
-                }
 
-                if(roomsFile.rooms[playerFile.player.pos].enemyId.length > 0) {
-                    enemiesFile.enemies[roomsFile.rooms[playerFile.player.pos].enemyId].attack();
+
+                if(response.value == 3){
+                    console.log('Congratulations ' + characters.player.name + "! You made it through the dungeon alive!\n--------------------")
+                    process.exit();
+                }else{
+                console.log(characters.player.name + ' moves to ' + roomsFile.rooms[response.value].name + '\n-----------------------');
+                characters.player.pos = response.value;
+                if(roomsFile.rooms[characters.player.pos].enemyId.length > 0) {
+                    characters.enemies[roomsFile.rooms[characters.player.pos].enemyId].attack(characters.player);
                 }
+               
+            }
                 main.gameLoop();
             }
             chooseRoom();
 
             break;
+
         case "attack":
-            if(roomsFile.rooms[playerFile.player.pos].enemyId.length >= 1){
-                async function chooseEnemy(){
+            let aliveEnemies = [];
+            for (let i = 0; i < roomsFile.rooms[characters.player.pos].enemyId.length; i++){
+                if(characters.enemies[roomsFile.rooms[characters.player.pos].enemyId[i]].status == 1){
+                    aliveEnemies.push(characters.enemies[roomsFile.rooms[characters.player.pos].enemyId[i]])
+                }
+            } if(aliveEnemies.length >= 1) {
+                async function chooseEnemy() {
                     let actionChoices = [];
-                    for(let i = 0; i < roomsFile.rooms[playerFile.player.pos].enemyId.length; i++){
+                    for (let i = 0; i < aliveEnemies.length; i++) {
                         actionChoices.push({
-                            title: enemiesFile.enemies[roomsFile.rooms[playerFile.player.pos].enemyId[i]].name,
-                            value: roomsFile.rooms[playerFile.player.pos].enemyId[i]
+                            title:aliveEnemies[i].name,
+                            value:aliveEnemies[i].id
                         })
                     }
 
@@ -71,12 +80,15 @@ function action(choice){
                         choices: actionChoices
                     })
 
-                    playerFile.player.attack(response.value)
-
+                    characters.player.attack(response.value)
+                    
                     main.gameLoop()
                 }
                 chooseEnemy();
-            }
+                aliveEnemies = null;
+            } else {console.log("It's safe here, no enemies to attack"); 
+            main.gameLoop()}
+            
             break;
 
         case "exit":
@@ -84,4 +96,4 @@ function action(choice){
     }
 }
 
-module.exports = { action };
+module.exports.action = action;
