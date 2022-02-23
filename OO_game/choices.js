@@ -1,6 +1,6 @@
 const roomsFile = require('./rooms.js');
 const characters = require('./characters.js');
-const main = require('./game.js');
+const main = require('./index.js');
 const prompts = require('prompts');
 
 function action(choice) {
