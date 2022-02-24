@@ -16,6 +16,7 @@ function action(choice) {
             for (let i = 0; i < connectedRooms.length; i++) {
                 console.log(connectedRooms[i])
             }
+            console.log("\n\n");
             if (roomsFile.rooms[characters.player.pos].enemyId.length != 0) {
                 characters.enemies[roomsFile.rooms[characters.player.pos].enemyId].attack(characters.player);
             }
