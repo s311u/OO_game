@@ -46,7 +46,7 @@ class Enemy extends Character{
                 if (randomNumber() < this.sr){
                     x.health -= this.dp;
                     if(x.health > 0){
-                        console.log(this.name + " hits " + x.name + " with " + this.dp + " leaving " + x.name + " with " + x.health + "\n");
+                        console.log(this.name + " hits " + x.name + " with " + this.dp + " leaving " + x.name + " with " + x.health + " health\n");
                     }else {
                         console.log(this.name + " hits " + x.name + " with " + this.dp + " killing " + x.name);
                         console.log("Game over!");
