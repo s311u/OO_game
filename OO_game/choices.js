@@ -16,10 +16,10 @@ function action(choice) {
             for (let i = 0; i < connectedRooms.length; i++) {
                 console.log(connectedRooms[i])
             }
-            console.log("\n\n");
-            if (roomsFile.rooms[characters.player.pos].enemyId.length != 0) {
-                characters.enemies[roomsFile.rooms[characters.player.pos].enemyId].attack(characters.player);
-            }
+            console.log("\n\n");if(roomsFile.rooms[characters.player.pos].enemyId.length > 0) {
+                 for (let i = 0; i < roomsFile.rooms[characters.player.pos].enemyId.length; i++)
+                    characters.enemies[roomsFile.rooms[characters.player.pos].enemyId[i]].attack(characters.player);
+                }
             main.gameLoop();
             break;
 
